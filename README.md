@@ -24,6 +24,24 @@ $ gwa <branch name>
 $ gwd
 ```
 
+### List all worktrees
+
+```fish
+$ gwl
+```
+
+### Navigate to a worktree or back to base directory
+
+```fish
+$ gwcd <branch name>
+```
+
+return to base directory
+
+```fish
+$ gwcd
+```
+
 Hope you have a _fast_ swim!
 
 [fisherman]: https://github.com/fisherman/fisherman
