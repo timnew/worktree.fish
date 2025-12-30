@@ -16,7 +16,10 @@ end
 
 # Remove worktree and branch from within active worktree directory.
 function gwd --description "Remove the current worktree and its associated branch"
-  read -l -n 1 -p "Remove worktree and branch? [y/N] " confirm
+  echo -n "Remove worktree and branch? [y/N] "
+  read -l -n 1 confirm
+  echo
+
   if string match -qi "y" $confirm
     set -l cwd (pwd)
     set -l worktree (basename "$cwd")
@@ -29,6 +32,7 @@ function gwd --description "Remove the current worktree and its associated branc
     # Protect against accidentally nuking a non-worktree directory
     if test "$root" != "$worktree"
       cd "../$root"
+
       git worktree remove "$worktree" --force
       git branch -D "$branch"
     end
