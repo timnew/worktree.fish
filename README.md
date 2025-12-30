@@ -15,13 +15,13 @@ $ fisher install timnew/worktree.fish
 ### Create a new worktree and branch
 
 ```fish
-$ ga <branch name>
+$ gwa <branch name>
 ```
 
 ### Remove the current worktree and its associated branch
 
 ```fish
-$ gd
+$ gwd
 ```
 
 Hope you have a _fast_ swim!

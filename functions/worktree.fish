@@ -1,5 +1,5 @@
 # Create a new worktree and branch from within current git directory.
-function ga --description "Create a new git worktree with a branch in a sibling directory"
+function gwa --description "Create a new git worktree with a branch in a sibling directory"
   if test -z "$argv[1]"
     echo "Usage: ga [branch name]"
     return 1
@@ -15,7 +15,7 @@ function ga --description "Create a new git worktree with a branch in a sibling 
 end
 
 # Remove worktree and branch from within active worktree directory.
-function gd --description "Remove the current worktree and its associated branch"
+function gwd --description "Remove the current worktree and its associated branch"
   if gum confirm "Remove worktree and branch?"
     set -l cwd (pwd)
     set -l worktree (basename "$cwd")
@@ -35,5 +35,5 @@ function gd --description "Remove the current worktree and its associated branch
 end
 
 # Autocomplete for ga - suggests branch names
-complete -c ga -x -a "(__fish_git_branches)" -d "Branch name"
-complete -c gd -d "Remove worktree and branch"
+complete -c gwa -x -a "(__fish_git_branches)" -d "Branch name"
+complete -c gwd -d "Remove worktree and branch"
