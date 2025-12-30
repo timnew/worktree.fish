@@ -16,9 +16,8 @@ end
 
 # Remove worktree and branch from within active worktree directory.
 function gwd --description "Remove the current worktree and its associated branch"
-  echo -n "Remove worktree and branch? [y/N] "
-  read -l -n 1 confirm
-  echo
+  read -l -P "Remove worktree and branch? [y/N] " confirm
+  or return  # Exit if user cancelled with Ctrl+C or Ctrl+D
 
   if string match -qi "y" $confirm
     set -l cwd (pwd)
