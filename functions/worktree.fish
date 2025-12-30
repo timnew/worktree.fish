@@ -24,7 +24,7 @@ function gwd --description "Remove the current worktree and its associated branc
     set -l worktree (basename "$cwd")
 
     # split on first `--`
-    set -l parts (string split --max=1 -- "$worktree")
+    set -l parts (string split --max=1 -- '--' "$worktree")
     set -l root $parts[1]
     set -l branch $parts[2]
 
