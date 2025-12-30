@@ -16,7 +16,8 @@ end
 
 # Remove worktree and branch from within active worktree directory.
 function gwd --description "Remove the current worktree and its associated branch"
-  if gum confirm "Remove worktree and branch?"
+  read -l -n 1 -p "Remove worktree and branch? [y/N] " confirm
+  if string match -qi "y" $confirm
     set -l cwd (pwd)
     set -l worktree (basename "$cwd")
 
