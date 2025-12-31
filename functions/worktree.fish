@@ -1,7 +1,7 @@
 # Create a new worktree and branch from within current git directory.
 function gwa --description "Create a new git worktree with a branch in a sibling directory"
   if test -z "$argv[1]"
-    echo "Usage: ga [branch name]"
+    echo "Usage: gwa [branch name]"
     return 1
   end
 
